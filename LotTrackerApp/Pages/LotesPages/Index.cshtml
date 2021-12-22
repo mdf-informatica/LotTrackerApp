@@ -1,0 +1,54 @@
+﻿@page
+@model LotTrackerApp.Pages.LotesPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoLote[0].Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoLote[0].Fabricante)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoLote[0].DtFabrico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdutoLote[0].DtValidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProdutoLote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fabricante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtFabrico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DtValidade)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

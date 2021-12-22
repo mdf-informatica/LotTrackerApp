@@ -1,0 +1,51 @@
+﻿@page
+@model LotTrackerApp.Pages.LotesPages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ProdutoLote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProdutoLote.Produto" />
+            <input type="hidden" asp-for="ProdutoLote.Lote" />
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Marca" class="control-label"></label>
+                <input asp-for="ProdutoLote.Marca" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Fabricante" class="control-label"></label>
+                <input asp-for="ProdutoLote.Fabricante" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Fabricante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.DtFabrico" class="control-label"></label>
+                <input asp-for="ProdutoLote.DtFabrico" class="form-control" />
+                <span asp-validation-for="ProdutoLote.DtFabrico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.DtValidade" class="control-label"></label>
+                <input asp-for="ProdutoLote.DtValidade" class="form-control" />
+                <span asp-validation-for="ProdutoLote.DtValidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

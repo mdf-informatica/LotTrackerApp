@@ -1,0 +1,44 @@
+﻿@page
+@model LotTrackerApp.Pages.FabricantesPages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProdutoFabricante</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProdutoFabricante.Produto" class="control-label"></label>
+                <input asp-for="ProdutoFabricante.Produto" class="form-control" />
+                <span asp-validation-for="ProdutoFabricante.Produto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoFabricante.Fabricante" class="control-label"></label>
+                <input asp-for="ProdutoFabricante.Fabricante" class="form-control" />
+                <span asp-validation-for="ProdutoFabricante.Fabricante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoFabricante.Marca" class="control-label"></label>
+                <input asp-for="ProdutoFabricante.Marca" class="form-control" />
+                <span asp-validation-for="ProdutoFabricante.Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

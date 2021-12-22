@@ -1,0 +1,43 @@
+﻿@page
+@model LotTrackerApp.Pages.LotesPages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProdutoLote</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProdutoLote.Marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProdutoLote.Marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProdutoLote.Fabricante)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProdutoLote.Fabricante)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProdutoLote.DtFabrico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProdutoLote.DtFabrico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProdutoLote.DtValidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProdutoLote.DtValidade)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-page="./Index">Back to List</a>
+</div>

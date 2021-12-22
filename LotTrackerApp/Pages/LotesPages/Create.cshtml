@@ -1,0 +1,75 @@
+﻿@page
+@model LotTrackerApp.Pages.LotesPages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    var error = Model.errorMsg;
+}
+
+<h1>Create</h1>
+
+
+@{
+    if (!string.IsNullOrWhiteSpace(error))
+    {
+        <span>@error</span>
+    }
+
+}else
+{
+    <div>sem erro</div>
+}
+
+
+<h3>@Model.errorMsg</h3>
+
+<h4>ProdutoLote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Produto" class="control-label"></label>
+                <input asp-for="ProdutoLote.Produto" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Produto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Lote" class="control-label"></label>
+                <input asp-for="ProdutoLote.Lote" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Lote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Marca" class="control-label"></label>
+                <input asp-for="ProdutoLote.Marca" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.Fabricante" class="control-label"></label>
+                <input asp-for="ProdutoLote.Fabricante" class="form-control" />
+                <span asp-validation-for="ProdutoLote.Fabricante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.DtFabrico" class="control-label"></label>
+                <input asp-for="ProdutoLote.DtFabrico" class="form-control" />
+                <span asp-validation-for="ProdutoLote.DtFabrico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdutoLote.DtValidade" class="control-label"></label>
+                <input asp-for="ProdutoLote.DtValidade" class="form-control" />
+                <span asp-validation-for="ProdutoLote.DtValidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
