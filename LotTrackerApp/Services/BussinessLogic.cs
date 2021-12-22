@@ -20,7 +20,7 @@ namespace LotTrackerApp.Services
         public bool LoteCheck(ProdutoLote lot)
         {
             ProdutoFabricante fabs = new ProdutoFabricante();
-
+            //Teste
             ProdutoFabricante fab =
                ( from f in _ctx.ProdutoFabricante
                 where (f.Fabricante == lot.Fabricante && f.Produto == lot.Produto)
